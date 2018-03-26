@@ -8,4 +8,8 @@ class Transaction
     @type = type
     @date = date
   end
+
+  def print_transaction
+    "|| #{@date} ||       || #{@type.capitalize} ||       || #{@amount} ||"
+  end
 end

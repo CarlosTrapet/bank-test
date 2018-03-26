@@ -15,6 +15,13 @@ class Account
     @transaction_history.push(Transaction.new(amount, type))    
   end
 
+  def print_statement
+    puts "|| Date                      ||       || Transaction ||   || Amount ||"
+    @transaction_history.each do |transaction|
+      puts transaction.print_transaction
+    end
+  end
+
   private
     def update_balance(amount, type)
       if type.downcase == "deposit"
